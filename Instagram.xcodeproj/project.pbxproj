@@ -13,6 +13,11 @@
 		CEE0B11E24E26A25007D529B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE0B11C24E26A25007D529B /* Main.storyboard */; };
 		CEE0B12024E26A26007D529B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE0B11F24E26A26007D529B /* Assets.xcassets */; };
 		CEE0B12324E26A26007D529B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEE0B12124E26A26007D529B /* LaunchScreen.storyboard */; };
+		CEE0B13924E271A1007D529B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0B13824E271A1007D529B /* LoginViewController.swift */; };
+		CEE0B13B24E271D0007D529B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0B13A24E271D0007D529B /* HomeViewController.swift */; };
+		CEE0B13D24E27215007D529B /* ImageSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0B13C24E27215007D529B /* ImageSelectViewController.swift */; };
+		CEE0B13F24E2723C007D529B /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0B13E24E2723C007D529B /* PostViewController.swift */; };
+		CEE0B14124E27264007D529B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE0B14024E27264007D529B /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		CEE0B11F24E26A26007D529B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEE0B12224E26A26007D529B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEE0B12424E26A26007D529B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CEE0B13824E271A1007D529B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CEE0B13A24E271D0007D529B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CEE0B13C24E27215007D529B /* ImageSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectViewController.swift; sourceTree = "<group>"; };
+		CEE0B13E24E2723C007D529B /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		CEE0B14024E27264007D529B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +69,12 @@
 				CEE0B11624E26A25007D529B /* AppDelegate.swift */,
 				CEE0B11824E26A25007D529B /* SceneDelegate.swift */,
 				CEE0B11A24E26A25007D529B /* ViewController.swift */,
+				CEE0B13824E271A1007D529B /* LoginViewController.swift */,
+				CEE0B13A24E271D0007D529B /* HomeViewController.swift */,
+				CEE0B13C24E27215007D529B /* ImageSelectViewController.swift */,
 				CEE0B11C24E26A25007D529B /* Main.storyboard */,
+				CEE0B13E24E2723C007D529B /* PostViewController.swift */,
+				CEE0B14024E27264007D529B /* SettingViewController.swift */,
 				CEE0B11F24E26A26007D529B /* Assets.xcassets */,
 				CEE0B12124E26A26007D529B /* LaunchScreen.storyboard */,
 				CEE0B12424E26A26007D529B /* Info.plist */,
@@ -138,6 +153,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE0B13D24E27215007D529B /* ImageSelectViewController.swift in Sources */,
+				CEE0B13B24E271D0007D529B /* HomeViewController.swift in Sources */,
+				CEE0B13F24E2723C007D529B /* PostViewController.swift in Sources */,
+				CEE0B14124E27264007D529B /* SettingViewController.swift in Sources */,
+				CEE0B13924E271A1007D529B /* LoginViewController.swift in Sources */,
 				CEE0B11B24E26A25007D529B /* ViewController.swift in Sources */,
 				CEE0B11724E26A25007D529B /* AppDelegate.swift in Sources */,
 				CEE0B11924E26A25007D529B /* SceneDelegate.swift in Sources */,
@@ -294,7 +314,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.asamin.t.Instagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -312,7 +332,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.asamin.t.Instagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
