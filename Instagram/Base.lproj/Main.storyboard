@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DXS-bg-ptQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DXS-bg-ptQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -92,11 +92,26 @@
                     <view key="view" contentMode="scaleToFill" id="yck-36-3h5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SS5-gh-lqz">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="SS5-gh-lqz" firstAttribute="top" secondItem="wim-kE-sU2" secondAttribute="top" id="LPi-RK-XA5"/>
+                            <constraint firstItem="wim-kE-sU2" firstAttribute="bottom" secondItem="SS5-gh-lqz" secondAttribute="bottom" id="W4B-wO-iyo"/>
+                            <constraint firstItem="SS5-gh-lqz" firstAttribute="leading" secondItem="wim-kE-sU2" secondAttribute="leading" id="lI7-Wo-aEA"/>
+                            <constraint firstItem="wim-kE-sU2" firstAttribute="trailing" secondItem="SS5-gh-lqz" secondAttribute="trailing" id="qfd-rY-eb8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wim-kE-sU2"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="ホーム" image="home" id="fbK-re-PgT"/>
                     <navigationItem key="navigationItem" id="KCh-fk-xNA"/>
+                    <connections>
+                        <outlet property="tableView" destination="SS5-gh-lqz" id="4Lm-pR-xwL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bma-aB-mfH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,7 +132,7 @@
                                 </constraints>
                                 <state key="normal" title="カメラ" backgroundImage="btn"/>
                                 <connections>
-                                    <action selector="handleCameraButton:" destination="N9t-ex-Pmo" eventType="touchUpInside" id="0zj-jd-f0n"/>
+                                    <action selector="handleCameraButton:" destination="N9t-ex-Pmo" eventType="touchUpInside" id="ttm-XV-Nuz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1z-dg-nXH">
@@ -157,9 +172,6 @@
                         <viewLayoutGuide key="safeArea" id="me9-dM-8Ju"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="投稿" image="camera" id="ilJ-nJ-WiL"/>
-                    <connections>
-                        <outlet property="handleLibraryButton" destination="jY7-nW-4vs" id="rcA-Cb-LFL"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="etJ-m5-Sdh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -182,17 +194,17 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCb-cF-03f">
-                                <rect key="frame" x="-93" y="168" width="600" height="80"/>
+                                <rect key="frame" x="57" y="168" width="300" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="QPr-sC-YrC"/>
                                 </constraints>
                                 <state key="normal" title="表示名を変更" backgroundImage="btn"/>
                                 <connections>
-                                    <action selector="handleChangeButton:" destination="AeK-eR-hxd" eventType="touchUpInside" id="S6W-JT-Nr3"/>
+                                    <action selector="handleChangeButton:" destination="AeK-eR-hxd" eventType="touchUpInside" id="NjF-Ex-CFf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ho-Jf-uQH">
-                                <rect key="frame" x="-93" y="258" width="600" height="80"/>
+                                <rect key="frame" x="57" y="218" width="300" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="1hS-13-LgQ"/>
                                 </constraints>
@@ -218,7 +230,6 @@
                     <tabBarItem key="tabBarItem" title="設定" image="setting" id="pRr-hv-qtN"/>
                     <connections>
                         <outlet property="displayNameTextField" destination="ybi-1A-csI" id="Eek-Gt-tvc"/>
-                        <outlet property="handleChangeButton" destination="jCb-cF-03f" id="HYU-Uf-be0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6E-VC-BXh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -234,7 +245,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2DY-BN-z6M">
-                                <rect key="frame" x="-93" y="294" width="600" height="80"/>
+                                <rect key="frame" x="57" y="254" width="300" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="vcW-Pe-gG0"/>
                                 </constraints>
@@ -251,7 +262,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6kU-A9-VOY">
-                                <rect key="frame" x="-93" y="204" width="600" height="80"/>
+                                <rect key="frame" x="57" y="204" width="300" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="DQk-DA-aUh"/>
                                 </constraints>

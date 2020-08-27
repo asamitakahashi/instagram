@@ -12,7 +12,8 @@ import Firebase
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-
+    
+    
     // 投稿データを格納する配列
     var postArray: [PostData] = []
 
@@ -77,7 +78,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
 
         // セル内のボタンのアクションをソースコードで設定する
         cell.likeButton.addTarget(self, action:#selector(handleButton(_:forEvent:)), for: .touchUpInside)
-
+        
+        // セル内のボタンのアクションをソースコードで設定する2
+        cell.comentButton.addTarget(self, action:#selector(handleButton2(_:forEvent:)), for: .touchUpInside)
+        
         return cell
     }
 
@@ -108,16 +112,70 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
             postRef.updateData(["likes": updateValue])
        
+            }
+    }
+    // セル内のボタンがタップされた時に呼ばれるメソッド
+    @objc func handleButton2(_ sender: UIButton, forEvent event: UIEvent) {
+        
+        // タップされたセルのインデックスを求める
+        let touch = event.allTouches?.first
+        let point = touch!.location(in: self.tableView)
+        let indexPath = tableView.indexPathForRow(at: point)
+
+        // 配列からタップされたインデックスのデータを取り出す
+        let postData = postArray[indexPath!.row]
+        var alertTextField: UITextField?
+       
+        //アラートを構成するボタンやテキストボックスを入れる入れ物を構築します
+        let alert = UIAlertController(
+            title: "コメント",
+            message: "入力してください",
+            preferredStyle: UIAlertController.Style.alert)
+        alert.addTextField(
+            configurationHandler: {(textField: UITextField!) in
+                alertTextField = textField
+                if let comments = alertTextField?.text {
+                textField.text = comments
+                }
+        
+    })
+    //部品をUIAlertControllerに追加
+    alert.addAction(
+    UIAlertAction(
+    //Cancelボタン
+    title: "Cancel",
+    style: UIAlertAction.Style.cancel,
+    handler: nil))
+    alert.addAction(
+    //OKボタン
+    UIAlertAction(
+    title: "OK",
+    style: UIAlertAction.Style.default) { _ in
+    //以下はボタンがクリックされた時の処理
+        if (alertTextField?.text) != nil {
+    // commentsを更新する
+    if let comments = alertTextField?.text {
+            // 更新データを作成する
+                let updateValue: FieldValue
+    //commentsを追加する更新データを作成
+            updateValue = FieldValue.arrayUnion([comments])
+    print(FieldValue.arrayUnion([comments]))
+    //更新データを書き込む
+    let postRef = Firestore.firestore().collection(Const.PostPath).document(postData.id)
+    postRef.updateData(["comments": updateValue])
+    }
+        }
+        }
+)
+self.present(alert, animated: true, completion: nil)
     }
 }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
+/*
+ // MARK: - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+ // Get the new view controller using segue.destination.
+ // Pass the selected object to the new view controller.
+ }
+ */
